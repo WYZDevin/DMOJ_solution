@@ -1,0 +1,20 @@
+import sys
+a = sys.stdin.readline()
+b = sys.stdin.readline()
+c = int(sys.stdin.readline())
+cnt = 0
+cnt2 = 0
+fuck = True
+for i in a:
+    if (i == " " and b[cnt2] != " ") or (b[cnt2] == " " and i != " "):
+        fuck = False
+    if i != b[cnt2]:
+        cnt += 1
+    cnt2 += 1
+
+if cnt <= c:
+    if fuck == False:
+        print("No plagiarism")
+    else: print("Plagiarized")
+else:
+    print("No plagiarism")
